@@ -13,6 +13,7 @@ test("sum should be correct",()=>{
     //expect
     expect(result1).toBe(3)
     expect(result2).toBe(5)
+    expect(result2).toBe(5)
 })
 test("multiply should be correct",()=>{
     const a = 1;
