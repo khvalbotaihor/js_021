@@ -9,10 +9,12 @@ test("sum should be correct",()=>{
     // action
     const result1 = sum(a,b)
     const result2 = sum(c,b)
+    const result3 = sum(c,a)
 
     //expect
     expect(result1).toBe(3)
     expect(result2).toBe(5)
+    expect(result3).toBe(3)
 })
 test("multiply should be correct",()=>{
     const a = 1;
