@@ -1,10 +1,16 @@
 import {multiply, splitIntoWords, sum} from "./01";
 
+let a: number;
+let b: number;
+let c: number;
+
+beforeEach(()=>{
+    a=1;
+    b=2;
+    c=3;
+})
 
 test("sum should be correct",()=>{
-    const a = 1;
-    const b = 2;
-    const c = 3;
 
     // action
     const result1 = sum(a,b)
@@ -15,9 +21,6 @@ test("sum should be correct",()=>{
     expect(result2).toBe(5)
 })
 test("multiply should be correct",()=>{
-    const a = 1;
-    const b = 2;
-    const c = 3;
 
     // action
     const result1 = multiply(a,b)

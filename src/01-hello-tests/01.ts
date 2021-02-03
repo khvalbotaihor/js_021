@@ -10,7 +10,7 @@ export function splitIntoWords(sentence:string) {
 
     return words.filter(w => w != "" && w !="-")
            .map(w => w
-               .replace("!", "").trim()
+               .replace("!", "")
                .replace(".", "")
            )
 }
