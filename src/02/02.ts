@@ -1,11 +1,11 @@
-type cityType = {
+type localCityType = {
     title: string,
     countryTitle: string
 }
 
 type addressType = {
     streetTitle: string,
-    city: cityType
+    city: localCityType
 }
 
 type techType = {
