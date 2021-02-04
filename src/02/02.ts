@@ -12,7 +12,7 @@ type techType = {
     id:number,
     title: string
 }
-type studentType = {
+export type studentType = {
     id:number,
     name:string,
     age: number,
@@ -23,7 +23,7 @@ type studentType = {
 
 
 
-const student : studentType= {
+export const student : studentType= {
     id: 1,
     name: "Dimich",
     age: 32,
@@ -48,3 +48,6 @@ const student : studentType= {
         },
     ]
 }
+
+
+export default student
