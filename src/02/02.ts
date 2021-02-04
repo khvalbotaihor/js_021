@@ -13,6 +13,7 @@ type techType = {
     title: string
 }
 type studentType = {
+    id:number,
     name:string,
     age: number,
     isActive : boolean,
@@ -23,6 +24,7 @@ type studentType = {
 
 
 const student : studentType= {
+    id: 1,
     name: "Dimich",
     age: 32,
     isActive : false,
