@@ -1,5 +1,5 @@
 import { CityType } from "../02/02_02";
-import {addMoneyToBudget, createMessage, fireStaff, hireStaff, repairHouse} from "./03";
+import {addMoneyToBudget, createMessage, fireStaff, group, group2, hireStaff, repairHouse} from "./03";
 
 let city : CityType;
 
@@ -72,3 +72,20 @@ test("Greeting message should be correct for city", ()=>{
 
     expect(message).toBe("Hello New York citizens!. I want you to be happy all 1000000 people");
 })
+
+test("check keys", ()=> {
+    const sentence = "aaaabbbcca"
+
+    const result = group(sentence)
+
+    expect(result).toStrictEqual(["'a', 4","'b', 3","'c', 2","'a', 1"]    )
+    }
+)
+test("check keys second function", ()=> {
+    const sentence = "aaaabbbcca"
+
+    const result = group2(sentence)
+
+    expect(result).toStrictEqual([4,3,2,1] )
+    }
+)
