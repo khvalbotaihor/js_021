@@ -78,7 +78,10 @@ test("check keys", ()=> {
 
     const result = group(sentence)
 
-    expect(result).toStrictEqual(["'a', 4","'b', 3","'c', 2","'a', 1"]    )
+    expect(result).toStrictEqual([{ key: 'a', value: 4 },
+        { key: 'b', value: 3 },
+        { key: 'c', value: 2 },
+        { key: 'a', value: 1 }]    )
     }
 )
 test("check keys second function", ()=> {

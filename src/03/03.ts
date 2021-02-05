@@ -56,7 +56,11 @@ export function createMessage(city: CityType) {
 }
 
 export function group(word: string) {
-    let letter;
+    interface KeyPair {
+        key: string;
+        value: number;
+    }
+    let letter="";
     let counter = 0;
     let arr = []
 
@@ -65,8 +69,8 @@ export function group(word: string) {
             if(letter===c){
                 counter += 1;
             }else {
-
-                arr.push(("'" +letter+ "'" +", "+ counter))
+                let kv1: KeyPair = { key:letter, value:counter };
+                arr.push(kv1)
                 counter = 1;
                 letter = c;
             }
@@ -75,7 +79,8 @@ export function group(word: string) {
             counter=1
         }
     }
-    arr.push(("'" +letter+ "'" +", "+ counter))
+    let kv1: KeyPair = { key:letter, value:counter };
+    arr.push(kv1)
     console.log(arr)
     return arr
 
@@ -98,6 +103,7 @@ export function group2(word: string) {
 
     }
     arr.push(counter)
+    console.log(arr)
     return arr
 }
 
