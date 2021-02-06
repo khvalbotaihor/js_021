@@ -1,5 +1,15 @@
 import { CityType } from "../02/02_02";
-import {addMoneyToBudget, createMessage, fireStaff, group, group2, hireStaff, repairHouse} from "./03";
+import {
+    addMoneyToBudget,
+    calculateSameStringElementsOneByOne,
+    createMessage,
+    fireStaff,
+    group,
+    group2,
+    group3,
+    hireStaff,
+    repairHouse, selectionSort, splitSameLetter
+} from "./03";
 
 let city : CityType;
 
@@ -90,5 +100,57 @@ test("check keys second function", ()=> {
     const result = group2(sentence)
 
     expect(result).toStrictEqual([4,3,2,1] )
+    }
+)
+test("check keys third function", ()=> {
+    const sentence = "aaaabbbcca"
+
+    const result = group3(sentence)
+
+    expect(result).toStrictEqual([
+        { key: 'a', value: 4 },
+        { key: 'b', value: 3 },
+        { key: 'c', value: 2 },
+        { key: 'a', value: 1 }
+    ] )
+    }
+)
+test("check keys third function", ()=> {
+    const sentence = "aaaabbbcca"
+
+    const result = calculateSameStringElementsOneByOne(sentence)
+
+    expect(result).toStrictEqual([
+        { key: 'a', value: 4 },
+        { key: 'b', value: 3 },
+        { key: 'c', value: 2 },
+        { key: 'a', value: 1 }
+        ]
+    )
+    }
+)
+test("check keys third function", ()=> {
+    const sentence = "aaaabbbcca"
+
+    const result = splitSameLetter(sentence)
+
+    expect(result).toStrictEqual([
+        { key: 'a', value: 4 },
+        { key: 'b', value: 3 },
+        { key: 'c', value: 2 },
+        { key: 'a', value: 1 }
+        ]
+    )
+    }
+)
+
+
+test("" +
+    "", ()=> {
+    const arr = [4,3,2,1]
+
+    const result = selectionSort(arr)
+
+    expect(result).toBe(2)
     }
 )

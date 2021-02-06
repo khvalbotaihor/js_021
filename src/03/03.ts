@@ -60,50 +60,164 @@ export function group(word: string) {
         key: string;
         value: number;
     }
-    let letter="";
+
+    let letter = "";
     let counter = 0;
     let arr = []
 
     for (let c of word) {
-        if(letter){
-            if(letter===c){
+        if (letter) {
+            if (letter === c) {
                 counter += 1;
-            }else {
-                let kv1: KeyPair = { key:letter, value:counter };
+            } else {
+                let kv1: KeyPair = {key: letter, value: counter};
                 arr.push(kv1)
                 counter = 1;
                 letter = c;
             }
-        }else {
+        } else {
             letter = c;
-            counter=1
+            counter = 1
         }
     }
-    let kv1: KeyPair = { key:letter, value:counter };
+    let kv1: KeyPair = {key: letter, value: counter};
     arr.push(kv1)
     console.log(arr)
     return arr
 
 }
+
 export function group2(word: string) {
     let w = word.split("")
     let counter = 0;
     let arr = []
 
-    for(let x= 0 ; x < word.length; x++){
-        if(x===0){
+    for (let x = 0; x < word.length; x++) {
+        if (x === 0) {
             counter++;
-        }
-        else if(w[x]===w[x-1]){
+        } else if (w[x] === w[x - 1]) {
             counter++
-        }else {
+        } else {
             arr.push(counter)
-            counter=1
+            counter = 1
         }
 
     }
     arr.push(counter)
     console.log(arr)
     return arr
+}
+
+
+type keyValuePair = {
+    key: string,
+    value: number
+}
+
+export function group3(word: string): keyValuePair[] {
+    let index = 0;
+    let arr: keyValuePair[] = []
+
+    for (let i = 0; i < word.length; i++) {
+        if (i === 0) {
+            arr[index] = {key: word[i], value: 1}
+        } else {
+            if (word[i] === word[i - 1]) {
+                arr[index].value++
+            } else {
+                index++
+                arr[index] = {key: word[i], value: 1}
+            }
+        }
+    }
+    console.log(arr)
+    return arr
+}
+
+
+type keyValueType = {
+    key: string
+    value: number
+}
+
+export function calculateSameStringElementsOneByOne(word: string): keyValueType[] {
+    let result: keyValueType[] = []
+    let index = 0
+
+    for (let i = 0; i < word.length; i++) {
+        if (i === 0) {
+            result[index] = {key: word[i], value: 1}
+        } else {
+            if (word[i] === word[i - 1]) {
+                result[index].value++
+            } else {
+                index++
+                result[index] = {key: word[i], value: 1}
+            }
+        }
+    }
+
+    console.log(result)
+    return result
+}
+
+type keyValuePairType = {
+    key: string
+    value: number
+}
+
+export function splitSameLetter(input: string): keyValuePairType[] {
+    const outputArray: keyValuePairType[] = []
+    let indexOfArray = 0
+
+    for (let i = 0; i < input.length; i++) {
+        if (i === 0) {
+            outputArray[indexOfArray] = {key: input[i], value: 1}
+        } else {
+            if (input[i] === input[i - 1]) {
+                outputArray[indexOfArray].value++
+            } else {
+                indexOfArray++
+                outputArray[indexOfArray] = {key: input[i], value: 1}
+            }
+        }
+    }
+    return outputArray;
+
+}
+
+
+
+
+
+function findSmallestIndex(array: number[]) {
+    var smallestElement = array[0]; // Stores the smallest value
+    var smallestIndex = 0; // Stores the index of the smallest value
+
+    for (var i = 1; i < array.length; i++) {
+        if (array[i] < smallestElement) {
+            smallestElement = array[i];
+            smallestIndex = i;
+        }
+    }
+
+    return smallestIndex;
+}
+
+// 2. Sort the array
+export function selectionSort(array:number[]) {
+    var sortedArray = [];
+    var length = array.length;
+
+    for (var i = 0; i < length; i++) {
+        // Finds the smallest element in the array
+        var smallestIndex = findSmallestIndex(array);
+        // Adds the smallest element to new array
+        let splice = array.splice(smallestIndex, 1)[0]
+        sortedArray.push(splice);
+    }
+    console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
+
+    return sortedArray;
 }
 
