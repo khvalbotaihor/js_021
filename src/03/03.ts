@@ -82,7 +82,6 @@ export function group(word: string) {
     }
     let kv1: KeyPair = {key: letter, value: counter};
     arr.push(kv1)
-    console.log(arr)
     return arr
 
 }
@@ -104,7 +103,6 @@ export function group2(word: string) {
 
     }
     arr.push(counter)
-    console.log(arr)
     return arr
 }
 
@@ -130,7 +128,6 @@ export function group3(word: string): keyValuePair[] {
             }
         }
     }
-    console.log(arr)
     return arr
 }
 
@@ -156,8 +153,6 @@ export function calculateSameStringElementsOneByOne(word: string): keyValueType[
             }
         }
     }
-
-    console.log(result)
     return result
 }
 
@@ -183,7 +178,6 @@ export function splitSameLetter(input: string): keyValuePairType[] {
         }
     }
     return outputArray;
-
 }
 
 
@@ -213,11 +207,35 @@ export function selectionSort(array:number[]) {
         // Finds the smallest element in the array
         var smallestIndex = findSmallestIndex(array);
         // Adds the smallest element to new array
-        let splice = array.splice(smallestIndex, 1)[0]
-        sortedArray.push(splice);
+        let varr = array.splice(smallestIndex, 1);
+        sortedArray.push(varr[0]);
     }
-    console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
-
     return sortedArray;
 }
+
+function findSmallestArrayValue (arr:number[]) : number{
+    let smallest = arr[0]
+    let smallestIndex = 0
+
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < smallest){
+            smallest = arr[i]
+            smallestIndex = i
+        }
+    }
+    return smallestIndex
+}
+
+export function sortFilteringArray (arr: number[]){
+    let newArray = []
+    let length = arr.length;
+
+    for (let i = 0; i < length; i++){
+        let smallestIndex = findSmallestArrayValue(arr)
+        newArray.push(arr.splice(smallestIndex, 1)[0])
+    }
+    return newArray
+}
+
+
 
