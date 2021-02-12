@@ -8,3 +8,22 @@ export const countDown = (i:number) : number =>{
     console.log(`I equals ${i}`)
     return countDown(i -1)
 }
+
+export const greet = (name:string) =>{
+    let a = (`hello ${name} !`)
+    let b = greet2(name)
+    let c = (`getting ready to say bye...`)
+    let d = bye()
+    return a + b + c + d
+}
+
+
+const bye = () =>{
+    let a;
+    return a = `ok bye !`
+}
+
+const greet2 = (name:string) =>{
+    let a
+    return a =`how are you ${name} ?`
+}
