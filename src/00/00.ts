@@ -27,3 +27,10 @@ const greet2 = (name:string) =>{
     let a
     return a =`how are you ${name} ?`
 }
+
+export const fact = (num: number) : number=>{
+    if(num ===1){
+        return 1
+    }
+    return num * fact(num -1)
+}
